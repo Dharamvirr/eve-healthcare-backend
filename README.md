@@ -6,7 +6,7 @@ This is a backend service for diagnostic test bookings and simulated payments, b
 
 ### Prerequisites
 - Node.js installed
-- MongoDB installed locally or MongoDB Atlas cluster
+- MongoDB installed locally or MongoDB Atlas cluster (Optional: The app will run an in-memory MongoDB automatically if no URI is provided!)
 
 ### Steps to Run Locally
 
@@ -26,8 +26,8 @@ This is a backend service for diagnostic test bookings and simulated payments, b
    ```
    NODE_ENV=development
    PORT=5000
-   MONGO_URI=your_mongodb_connection_string
    JWT_SECRET=your_jwt_secret
+   # MONGO_URI=your_mongodb_connection_string (Leave empty to use zero-config in-memory MongoDB)
    ```
 
 4. **Start the server**

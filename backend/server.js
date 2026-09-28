@@ -9,12 +9,21 @@ const authRoutes = require('./routes/authRoutes');
 const centreRoutes = require('./routes/centreRoutes');
 const bookingRoutes = require('./routes/bookingRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
+const rateLimit = require('express-rate-limit');
 
 dotenv.config();
 
 connectDB();
 
 const app = express();
+
+// Apply Rate Limiting (Bonus criteria)
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
+  message: 'Too many requests from this IP, please try again after 15 minutes'
+});
+app.use(limiter);
 
 app.use(cors());
 app.use(express.json());
