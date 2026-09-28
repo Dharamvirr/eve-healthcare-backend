@@ -12,7 +12,7 @@ This is a backend service for diagnostic test bookings and simulated payments, b
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repo-link>
+   git clone https://github.com/Dharamvirr/eve-healthcare-backend.git
    cd backend
    ```
 
